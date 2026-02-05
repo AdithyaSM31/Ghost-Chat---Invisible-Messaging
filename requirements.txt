@@ -1,0 +1,24 @@
+# Ghost Chat - Steganographic Messenger
+# Python dependencies
+
+# Cryptography
+pycryptodome>=3.19.0
+
+# Image Processing
+Pillow>=10.0.0
+numpy>=1.24.0
+
+# Scientific Computing (for DCT if implementing)
+scipy>=1.11.0
+
+# Optional: Image quality metrics
+scikit-image>=0.21.0
+
+# Optional: Advanced image processing
+opencv-python>=4.8.0
+
+# CLI utilities
+colorama>=0.4.6
+
+# Progress bars (optional)
+tqdm>=4.66.0
