@@ -2,40 +2,62 @@
 /* Warning Box */
 .warning-box {
     margin-top: 1.5rem;
-    background: rgba(255, 71, 87, 0.1);
-    border: 1px solid rgba(255, 71, 87, 0.3);
+    background: rgba(40, 20, 25, 0.6); /* Darker, glassy red background */
+    border: 1px solid rgba(255, 99, 114, 0.2);
+    border-left: 4px solid #ff4757; /* Accent strip */
     border-radius: 12px;
-    padding: 1rem;
+    padding: 1.25rem;
     display: flex;
     align-items: flex-start;
     text-align: left;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2sease;
+}
+
+.warning-box:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 99, 114, 0.4);
 }
 
 .warning-icon {
     font-size: 1.5rem;
-    margin-right: 1rem;
+    margin-right: 1.2rem;
     flex-shrink: 0;
+    filter: drop-shadow(0 0 10px rgba(255, 71, 87, 0.4));
 }
 
 .warning-text strong {
     color: #ff6b81;
     display: block;
-    margin-bottom: 0.3rem;
-    font-weight: 800;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.9rem;
 }
 
 .warning-text p {
-    color: var(--text-secondary);
-    margin-bottom: 0.3rem;
-    line-height: 1.4;
+    color: #cbd5e0; /* Lighter than generic secondary text */
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+.warning-text p:last-child {
+    margin-bottom: 0;
 }
 
 .warning-text u {
-    color: #fff;
+    color: #ffffff;
     text-decoration: none;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 2px 4px;
-    border-radius: 4px;
+    background: rgba(255, 71, 87, 0.2);
+    border: 1px solid rgba(255, 71, 87, 0.3);
+    padding: 2px 8px;
+    border-radius: 6px;
     font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.03em;
+    display: inline-block;
 }
