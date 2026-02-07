@@ -45,6 +45,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 2rem 4rem;
+    padding-top: calc(2rem + env(safe-area-inset-top)); /* Mobile Status Bar Fix */
 }
 
 .logo {
@@ -365,5 +366,8 @@ input:focus, textarea:focus {
 
 @media (max-width: 768px) {
     .hero h1 { font-size: 2.5rem; }
-    nav { padding: 1.5rem; }
+    nav { 
+        padding: 1.5rem;
+        padding-top: calc(2rem + env(safe-area-inset-top));
+    }
 }

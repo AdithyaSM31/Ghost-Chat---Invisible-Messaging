@@ -10,3 +10,16 @@ venv/
 *.log
 uploads/*
 !uploads/.gitkeep
+
+# Node / Web
+node_modules/
+dist/
+www/
+
+# Android / Capacitor
+android/app/build/
+android/.gradle/
+android/local.properties
+android/*.iml
+.idea/
+.DS_Store

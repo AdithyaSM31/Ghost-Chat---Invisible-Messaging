@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Ghost Chat | Invisible Messaging</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#03030b">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👻</text></svg>">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/warning.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="ambient-light"></div>
+    
+    <nav>
+        <div class="logo">GHOST CHAT</div>
+        <div class="nav-links">
+            <a href="#" class="active">Home</a>
+            <a href="https://github.com/AdithyaSM31/Ghost-Chat---Invisible-Messaging/blob/main/README.md" target="_blank">Docs</a>
+            <a href="https://github.com/AdithyaSM31/Ghost-Chat---Invisible-Messaging" target="_blank">GitHub</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <h1>Secrets in the <span class="gradient-text">Pixel World</span></h1>
+            <p>Invisible, encrypted messaging hidden within plain sight. Secure your communications with military-grade AES-256 encryption and steganography.</p>
+        </section>
+
+        <section class="interface-container">
+            <div class="tabs">
+                <button class="tab-btn active" onclick="switchTab('shroud')">Shroud Message</button>
+                <button class="tab-btn" onclick="switchTab('reveal')">Reveal Secret</button>
+            </div>
+
+            <!-- ENCRYPT & HIDE SECTION -->
+            <div id="shroud" class="panel active">
+                <form id="encryptForm">
+                    <div class="file-drop-area" id="dropAreaEnc">
+                        <span class="fake-btn">Choose Image</span>
+                        <span class="file-msg">or drag and drop here</span>
+                        <input class="file-input" type="file" name="image" accept="image/png, image/jpeg" required>
+                    </div>
+                    <div id="previewEnc" class="image-preview hidden"></div>
+
+                    <div class="input-group">
+                        <textarea name="message" placeholder="Enter your secret message..." required></textarea>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="password" name="password" placeholder="Encryption Password" required>
+                    </div>
+
+                    <button type="submit" class="action-btn">
+                        <span>Initiate Ghost Protocol</span>
+                        <div class="btn-glow"></div>
+                    </button>
+                </form>
+                <div id="encResult" class="result-area hidden">
+                    <h3>Transmission Ready</h3>
+                    <p>Capacity Used: <span id="capUsed">0%</span></p>
+                    <a id="downloadBtn" href="#" class="download-link">Download Stego Image</a>
+                    
+                    <div class="warning-box">
+                        <span class="warning-icon">⚠️</span>
+                        <div class="warning-text">
+                            <strong>DO NOT SEND AS A PHOTO</strong>
+                            <p>Social media apps (WhatsApp, Discord, etc.) compress images, which <strong>destroys the secret message</strong>.</p>
+                            <p>Always share as a <u>FILE</u> or <u>DOCUMENT</u> to preserve the data.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EXTRACT & DECRYPT SECTION -->
+            <div id="reveal" class="panel">
+                <form id="decryptForm">
+                    <div class="file-drop-area" id="dropAreaDec">
+                        <span class="fake-btn">Choose Stego Image</span>
+                        <span class="file-msg">or drag and drop here</span>
+                        <input class="file-input" type="file" name="image" accept="image/png" required>
+                    </div>
+                    <div id="previewDec" class="image-preview hidden"></div>
+
+                    <div class="input-group">
+                        <input type="password" name="password" placeholder="Decryption Password" required>
+                    </div>
+
+                    <button type="submit" class="action-btn">
+                        <span>Reveal Secrets</span>
+                        <div class="btn-glow"></div>
+                    </button>
+                </form>
+                <div id="decResult" class="result-area hidden">
+                    <h3>Decrypted Transmission</h3>
+                    <div class="message-box" id="revealedMessage"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <div class="loader hidden" id="loader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Client-Side Engine for Offline Mode -->
+    <script src="js/ghost-engine.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

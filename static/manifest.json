@@ -1,0 +1,22 @@
+{
+  "name": "Ghost Chat",
+  "short_name": "GhostChat",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#03030b",
+  "theme_color": "#03030b",
+  "orientation": "portrait",
+  "description": "Invisible Encrypted Messaging",
+  "icons": [
+    {
+      "src": "https://raw.githubusercontent.com/AdithyaSM31/Ghost-Chat---Invisible-Messaging/main/static/img/icon_192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://raw.githubusercontent.com/AdithyaSM31/Ghost-Chat---Invisible-Messaging/main/static/img/icon_512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,6 +1,38 @@
 # Ghost Chat - Steganographic Messenger
 
-A secure messaging tool that hides AES-256 encrypted messages within images using steganography, achieving deniable authenticity and avoiding metadata profiling.
+<div align="center">
+  <img src="logo.png" alt="Ghost Chat Logo" width="150" height="auto" />
+  <br>
+  <em>Secrets in the Pixel World</em>
+</div>
+
+<br>
+
+A secure messaging tool that hides AES-256 encrypted messages within images using steganography, achieving deniable authenticity and avoiding metadata profiling. Now available as a **Web App** and **Offline Android App**.
+
+## 📱 Mobile App (Android)
+
+Access hidden communications on the go with the new hybrid Android app.
+
+- **100% Offline Encryption**: All processing happens on your device using `ghost-engine.js`.
+- **Native File Saving**: Directly saves generated stego-images to your Documents/Pictures folder.
+- **Stealth UI**: Glassmorphism design inspired by cyber-sec aesthetics.
+
+### Building for Android
+1. **Install Node.js & Dependencies**
+   ```bash
+   npm install
+   ```
+2. **Sync with Android Project**
+   ```bash
+   npx cap sync android
+   ```
+3. **Open in Android Studio**
+   ```bash
+   npx cap open android
+   ```
+
+---
 
 ## 🎯 Project Overview
 

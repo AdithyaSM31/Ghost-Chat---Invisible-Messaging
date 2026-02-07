@@ -1,0 +1,8 @@
+{
+  "appId": "com.adithya.ghostchat",
+  "appName": "Ghost Chat",
+  "webDir": "static",
+  "server": {
+    "androidScheme": "https"
+  }
+}
