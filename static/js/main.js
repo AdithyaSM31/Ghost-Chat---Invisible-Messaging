@@ -101,6 +101,14 @@ document.getElementById('encryptForm').addEventListener('submit', async (e) => {
     } else {
         try {
             const response = await fetch('/encrypt_hide', { method: 'POST', body: formData });
+            
+            // If the endpoint doesn't exist (Static Host) or fails, fallback to Client-Side
+            if (response.status === 404 || response.status === 405) {
+                console.log("Backend not found. Using Client-Side Engine.");
+                await handleOfflineEncrypt(formData, resultArea);
+                return;
+            }
+
             const data = await response.json();
             if (response.ok) {
                 showEncSuccess(data, resultArea);
@@ -231,6 +239,14 @@ document.getElementById('decryptForm').addEventListener('submit', async (e) => {
     } else {
         try {
             const response = await fetch('/extract_decrypt', { method: 'POST', body: formData });
+            
+            // Fallback for Static Host
+            if (response.status === 404 || response.status === 405) {
+                console.log("Backend not found. Using Client-Side Engine.");
+                await handleOfflineDecrypt(formData, resultArea);
+                return;
+            }
+
             const data = await response.json();
             if (response.ok) {
                 showDecSuccess(data.message, resultArea);
