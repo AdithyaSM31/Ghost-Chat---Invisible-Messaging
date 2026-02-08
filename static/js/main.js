@@ -90,9 +90,6 @@ function getImageData(file) {
         reader.readAsDataURL(file);
     });
 }
-        reader.readAsDataURL(file);
-    });
-}
 
 // Encryption Handler
 document.getElementById('encryptForm').addEventListener('submit', async (e) => {
