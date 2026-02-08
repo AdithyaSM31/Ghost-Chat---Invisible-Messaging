@@ -74,15 +74,22 @@ function getImageData(file) {
                 const canvas = document.createElement('canvas');
                 canvas.width = img.width;
                 canvas.height = img.height;
-                const ctx = canvas.getContext('2d');
+                // Optimize for pixel manipulation and disable smoothing
+                const ctx = canvas.getContext('2d', { willReadFrequently: true, alpha: false }); 
+                ctx.imageSmoothingEnabled = false;
                 ctx.drawImage(img, 0, 0);
                 resolve({
-                    imageData: ctx.getImageData(0, 0, canvas.width, canvas.height),
+                    imageData: ctx.getImageData(0, 0, canvas.width, canvas.height, { colorSpace: 'srgb' }),
                     canvas: canvas
                 });
             };
+            img.onerror = reject;
             img.src = e.target.result;
         };
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+    });
+}
         reader.readAsDataURL(file);
     });
 }
